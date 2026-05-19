@@ -1,0 +1,27 @@
+.container{
+    width:350px;
+    padding:30px;
+    border-radius:15px;
+}
+
+input{
+    width:90%;
+    padding:10px;
+}
+
+button{
+    width:95%;
+    padding:10px;
+}
+
+@media screen and (max-width:600px){
+
+    .container{
+        width:90%;
+    }
+
+    input,
+    button{
+        width:100%;
+    }
+}
