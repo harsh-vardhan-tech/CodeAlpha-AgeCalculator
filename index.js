@@ -1,49 +1,49 @@
 function calculateAge(){
 
-  var day =
+  let day =
   parseInt(document.getElementById("day").value);
 
-  var month =
+  let month =
   parseInt(document.getElementById("month").value);
 
-  var year =
+  let year =
   parseInt(document.getElementById("year").value);
 
-  var errorMsg =
-  document.getElementById("errorMsg");
+  let error =
+  document.getElementById("error");
 
-  errorMsg.textContent = "";
+  error.innerHTML = "";
 
   if(!day || !month || !year){
 
-    errorMsg.textContent =
-    "Please enter valid date";
+    error.innerHTML =
+    "Please enter valid date of birth";
 
     return;
   }
 
-  var today = new Date();
+  let today = new Date();
 
-  var birthDate =
+  let birthDate =
   new Date(year, month - 1, day);
 
   if(birthDate > today){
 
-    errorMsg.textContent =
-    "Future date not allowed";
+    error.innerHTML =
+    "Future date is not allowed";
 
     return;
   }
 
-  var years =
+  let years =
   today.getFullYear() -
   birthDate.getFullYear();
 
-  var months =
+  let months =
   today.getMonth() -
   birthDate.getMonth();
 
-  var days =
+  let days =
   today.getDate() -
   birthDate.getDate();
 
@@ -61,15 +61,12 @@ function calculateAge(){
     months += 12;
   }
 
-  document.getElementById("ageYears")
-  .textContent = years;
+  document.getElementById("years")
+  .innerHTML = years;
 
-  document.getElementById("ageMonths")
-  .textContent = months;
+  document.getElementById("months")
+  .innerHTML = months;
 
-  document.getElementById("ageDays")
-  .textContent = days;
-
-  document.getElementById("resultBox")
-  .style.display = "block";
+  document.getElementById("days")
+  .innerHTML = days;
 }
