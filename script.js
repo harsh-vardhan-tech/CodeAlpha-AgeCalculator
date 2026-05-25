@@ -22,6 +22,14 @@ function calculateAge(){
     return;
   }
 
+  if(day > 31 || month > 12){
+
+    error.innerHTML =
+    "Invalid date entered";
+
+    return;
+  }
+
   let today = new Date();
 
   let birthDate =
@@ -69,4 +77,75 @@ function calculateAge(){
 
   document.getElementById("days")
   .innerHTML = days;
+
+  let weekdays = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday"
+  ];
+
+  document.getElementById("weekday")
+  .innerHTML =
+  "You were born on " +
+  weekdays[birthDate.getDay()];
+
+  let nextBirthday =
+  new Date(
+    today.getFullYear(),
+    birthDate.getMonth(),
+    birthDate.getDate()
+  );
+
+  if(nextBirthday < today){
+
+    nextBirthday.setFullYear(
+    today.getFullYear() + 1);
+  }
+
+  let diffTime =
+  nextBirthday - today;
+
+  let daysLeft =
+  Math.ceil(
+  diffTime / (1000 * 60 * 60 * 24)
+  );
+
+  document.getElementById("birthday")
+  .innerHTML =
+  "Next Birthday in " +
+  daysLeft + " days";
 }
+
+function resetFields(){
+
+  document.getElementById("day").value = "";
+
+  document.getElementById("month").value = "";
+
+  document.getElementById("year").value = "";
+
+  document.getElementById("years").innerHTML = "0";
+
+  document.getElementById("months").innerHTML = "0";
+
+  document.getElementById("days").innerHTML = "0";
+
+  document.getElementById("birthday").innerHTML = "";
+
+  document.getElementById("weekday").innerHTML = "";
+
+  document.getElementById("error").innerHTML = "";
+}
+
+document.addEventListener("keydown",
+function(e){
+
+  if(e.key === "Enter"){
+
+    calculateAge();
+  }
+});
