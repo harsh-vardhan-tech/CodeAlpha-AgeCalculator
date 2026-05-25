@@ -17,7 +17,7 @@ function calculateAge(){
   if(!day || !month || !year){
 
     error.innerHTML =
-    "Please enter valid date of birth";
+    "Please enter valid date";
 
     return;
   }
@@ -38,7 +38,7 @@ function calculateAge(){
   if(birthDate > today){
 
     error.innerHTML =
-    "Future date is not allowed";
+    "Future date not allowed";
 
     return;
   }
@@ -90,7 +90,7 @@ function calculateAge(){
 
   document.getElementById("weekday")
   .innerHTML =
-  "You were born on " +
+  "Born on " +
   weekdays[birthDate.getDay()];
 
   let nextBirthday =
@@ -140,12 +140,3 @@ function resetFields(){
 
   document.getElementById("error").innerHTML = "";
 }
-
-document.addEventListener("keydown",
-function(e){
-
-  if(e.key === "Enter"){
-
-    calculateAge();
-  }
-});
