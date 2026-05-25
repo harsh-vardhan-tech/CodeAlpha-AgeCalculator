@@ -2,18 +2,18 @@ body{
   margin:0;
   padding:0;
   font-family:Arial,sans-serif;
-  background:#f1f5f9;
+  background:#e2e8f0;
   display:flex;
   justify-content:center;
   align-items:center;
-  height:100vh;
+  min-height:100vh;
 }
 
 .container{
   width:400px;
   background:white;
   padding:35px;
-  border-radius:12px;
+  border-radius:15px;
   text-align:center;
   box-shadow:0 4px 15px rgba(0,0,0,0.1);
 }
@@ -36,7 +36,7 @@ p{
 input{
   width:100%;
   padding:12px;
-  border:1px solid #ccc;
+  border:1px solid #cbd5e1;
   border-radius:8px;
   text-align:center;
   font-size:16px;
@@ -49,15 +49,14 @@ input:focus{
 
 button{
   width:100%;
-  margin-top:15px;
   padding:12px;
+  margin-top:15px;
   background:#2563eb;
   color:white;
   border:none;
   border-radius:8px;
   font-size:16px;
   cursor:pointer;
-  transition:0.3s;
 }
 
 button:hover{
@@ -80,19 +79,19 @@ button:hover{
 .result-box{
   display:flex;
   justify-content:space-between;
-  margin-top:25px;
   gap:10px;
+  margin-top:25px;
 }
 
 .card{
   width:100%;
-  background:#eff6ff;
+  background:#f1f5f9;
   padding:15px;
   border-radius:10px;
 }
 
 .card span{
-  font-size:30px;
+  font-size:32px;
   font-weight:bold;
   color:#2563eb;
 }
@@ -102,14 +101,14 @@ button:hover{
 }
 
 .extra-info p{
-  color:#475569;
   margin:5px 0;
+  color:#475569;
 }
 
 footer{
   margin-top:20px;
-  font-size:14px;
   color:#64748b;
+  font-size:14px;
 }
 
 @media(max-width:500px){
